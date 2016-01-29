@@ -134,9 +134,9 @@ RHEL7 부터는 ethernet device이름이 eth에서 다른 이름으로 변경이
 이 bootstarp을 실행하기 위해서는 perl이 필요 합니다. 그러므로 실행 전에 perl을 yum을 이용하여 설치를 해 줘야 합니다.
 
 ```bash
-[root@localhost] yum install perl
-[root@localhost] curl -o bootstrap http://mirror.oops.org/pub/AnNyung/3/inst/bootstrap
-[root@localhost] bash bootstrap
+[root@localhost /root] yum install perl
+[root@localhost /root] curl -o bootstrap http://mirror.oops.org/pub/AnNyung/3/inst/bootstrap
+[root@localhost /root] bash bootstrap
 ```
 ![](VirtualBox_AnNyung3_22_01_2016_17_49_29.png)
 
@@ -187,9 +187,9 @@ ethernet 이름이 다시 **eth**로 변경이 되었으며, 최초 설치 사�
 부팅시에 실행되는 daemon list 입니다. RHEL 6까지는 **ntsysv** 명령이나 **chkconfig** 명령으로 확인이 가능했지만, RHEL 7부터 systemd 도입으로 다음의 명령을 이용하면 가능 합니다.
 
 ```bahs
-[root@localhost] systemctl list-unit --type=service
-[root@localhost] systemctl disable postfix  // postfix를 부팅시에 실행 안하도록
-[root@localhost] systemctl enable postfix   // postfix를 부팅시에 실행 하도록
+[root@localhost /root] systemctl list-unit --type=service
+[root@localhost /root] systemctl disable postfix  // postfix를 부팅시에 실행 안하도록
+[root@localhost /root] systemctl enable postfix   // postfix를 부팅시에 실행 하도록
 ```
 
 ![](VirtualBox_AnNyung3_22_01_2016_17_52_20.png)
