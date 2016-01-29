@@ -2,7 +2,13 @@
 
 이 문서는 CentOS 7 또는 RHEL 7의 Minial ISO를 이용하셔 설치 하는 방법에 대하여 기술합니다.
 
-안녕 리눅스의 설치는 기본적으로 안녕 리눅스용 kickstart 설치 환경을 이용합니다. 하지만, 요즘 환경에서 kickstart 설정 파일을 기존의 ISO에 포함시켜 만들거나 하는 작업이 그리 간편하지는 않고 또한 RHEL7에서 systemd를 도입함으로서 설치 환경의 자동화가 좀 더 번거로워 졌기 때문에, 여기서는 CentOS 7이나 RHEL 7을 설치한 이후에, 안녕 리눅스로 전환하는 방법을 이용합니다.
+안녕 리눅스의 설치는 기본적으로 안녕 리눅스용 kickstart 설치 환경을 이용합니다. kickstart 설치가 가능하신 분들이나 kickstart 설치를 원하시는 분들은 [RHEL 7 install Guide](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [booting option](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-anaconda-boot-options.html) 을 참조하여 설치를 하시기 바랍니다. 안녕 리눅스용 kickstart는 다음 URL에서 받으실 수 있습니다.
+
+> http://mirror.oops.org/pub/AnNyung/3/inst/AnNyung.ks
+> http://ftp.kr.freebsd.org/pub/AnNyung/3/inst/AnNyung.ks
+
+
+하지만, 요즘 환경에서 kickstart 설정 파일을 기존의 ISO에 포함시켜 만들거나 하는 작업이 그리 간편하지는 않고 또한 RHEL7에서 systemd를 도입함으로서 설치 환경의 자동화가 좀 더 번거로워 졌기 때문에, 여기서는 CentOS 7이나 RHEL 7을 설치한 이후에, 안녕 리눅스로 전환하는 방법을 이용합니다.
 
 또한, 설치 후, 작업을 별도로 해야 하기 때문에 될 수 있으면, <u>Network Install ISO를 이용하여 설치하는 방법</u>을 권장 합니다.
 
@@ -32,3 +38,5 @@
 언어 선택에서 한국어를 선택하였다면, 위의 이미지와 같이 되어 있을 겁니다. 만약 다른 언어를 선택하였다면, 시간 설정과 키보드, 언어지원등의 설정을 직접 원하시는 대로 해 주시면 됩니다.
 
 안녕 리눅스 설치를 위해서는, 기본적으로 **디스크 파티션**과 **KDUMP**만 비활성화 해 주시면 됩니다.
+
+디스크 파티셔닝에 대해서는 
