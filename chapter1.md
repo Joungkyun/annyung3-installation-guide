@@ -37,6 +37,17 @@
 
 언어 선택에서 한국어를 선택하였다면, 위의 이미지와 같이 되어 있을 겁니다. 만약 다른 언어를 선택하였다면, 시간 설정과 키보드, 언어지원등의 설정을 직접 원하시는 대로 해 주시면 됩니다.
 
-안녕 리눅스 설치를 위해서는, 기본적으로 **디스크 파티션**과 **KDUMP**만 비활성화 해 주시면 됩니다.
+안녕 리눅스 설치를 위해서는, 기본적으로 **_디스크 파티션_** 과 **_네트워크 설정_**, **_KDUMP_**만 비활성화 해 주시면 됩니다.
 
-디스크 파티셔닝에 대해서는 
+Security policy의 경우에는, 여기서 설정을 하더라도 안녕 리눅스 전환시에 SELINUX가 disabled로 설정이 됩니다. 그러므로 SELINUX를 사용하기를 원한다면, 여기서 선택을 하지말고 설치를 완료한 후에 SELINUX를 활성화 시키십시오.
+
+## 3. 디스크 파티션
+
+필자는 자동 파티셔닝과 LVM을 선호하지 않고, 또한 통파티션을 선호하기 때문에 아래의 디스크 파티션 이미지는 필자의 선호에 의한 화면을 보여 줍니다.
+
+디스크 파티션의 경우 안녕 리눅스 설치에 큰 영향을 주지 않기 때문에 설치하시는 분들의 선호에 맞게 해 주시면 되겠습니다.
+
+디스크 파티션닝에 대해서는 [RHEL 7 install Guide](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [설치 대상](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-anaconda-boot-options.html) 문서를 참조 하시기 바랍니니다.
+
+
+![](VirtualBox_AnNyung3_22_01_2016_16_17_07.png)
