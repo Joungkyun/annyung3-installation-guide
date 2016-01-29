@@ -12,7 +12,7 @@
 
 또한, 설치 후, 작업을 별도로 해야 하기 때문에 될 수 있으면, <u>Network Install ISO를 이용하여 설치하는 방법</u>을 권장 합니다.
 
-이 문서는 PC나 VirtualBox에서 설치를 할때 동일하게 적용할 수 있습니다. (Xen server는 별도의 방법으로 설치를 해야 합니다.)
+이 문서는 Windows용 VirtualBox에서 설치를 하는 이미지를 보여줍니다. 이 이미지는 PC나 서버에 CDROM 또는 USB 설치시에 동일하게 적용이 됩니다.
 
 또한, Minimal ISO를 이용하여 부팅 매체(CD 또는 USB)를 만드는 방법은 여기서 다루지 않으니, 인터넷에서 검색을 하여 준비를 하여야 합니다. Miniaml ISO의 버전은 7.x 대이면 어떤 버전이든 상관이 없습니다. 안녕 리눅스 전환시에 최신 버전으로 업데이트가 됩니다.
 
@@ -33,7 +33,7 @@
 
 ## 3. 기본 설치 화면
 
-![기본 설치 화면](VirtualBox_AnNyung3_22_01_2016_16_14_50.png "기본 설치 화면")
+![기본 설치 화면](VirtualBox_AnNyung3_22_01_2016_16_14_50.png)
 
 언어 선택에서 한국어를 선택하였다면, 위의 이미지와 같이 되어 있을 겁니다. 만약 다른 언어를 선택하였다면, 시간 설정과 키보드, 언어지원등의 설정을 직접 원하시는 대로 해 주시면 됩니다.
 
@@ -49,5 +49,11 @@ Security policy의 경우에는, 여기서 설정을 하더라도 안녕 리눅�
 
 디스크 파티션닝에 대해서는 [RHEL 7 install Guide](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [설치 대상](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-anaconda-boot-options.html) 문서를 참조 하시기 바랍니니다.
 
+디스크 파티셔닝을 하기 위해서는 **3. 기본 설치 화면**의 붉은색 사각형으로 표시되어 있는 **설치 대상(D)** 를 클릭 합니다.
 
+![](VirtualBox_AnNyung3_22_01_2016_16_15_22.png)
+![](VirtualBox_AnNyung3_22_01_2016_16_16_51.png)
 ![](VirtualBox_AnNyung3_22_01_2016_16_17_07.png)
+
+
+## 4. 네트워크 설정
