@@ -41,7 +41,7 @@
 
 Security policy의 경우에는, 여기서 설정을 하더라도 안녕 리눅스 전환시에 SELINUX가 disabled로 설정이 됩니다. 그러므로 SELINUX를 사용하기를 원한다면, 여기서 선택을 하지말고 설치를 완료한 후에 SELINUX를 활성화 시키십시오.
 
-## 3. 디스크 파티션
+## 4. 디스크 파티션
 
 필자는 자동 파티셔닝과 LVM을 선호하지 않고, 또한 통파티션을 선호하기 때문에 아래의 디스크 파티션 이미지는 필자의 선호에 의한 화면을 보여 줍니다.
 
@@ -63,7 +63,7 @@ Security policy의 경우에는, 여기서 설정을 하더라도 안녕 리눅�
 <strong style="color: red;">주의</strong>: disk가 여러개일 경우에는 booting partion 설정에 주의하십시오.
 
 
-## 4. 네트워크 설정
+## 5. 네트워크 설정
 
 네트워크 설정에 대해서는 [RHEL 7 install Guide](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [네트워크 및 호스트명(N)](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-anaconda-boot-options.html) 문서를 참조 하시기 바랍니니다.
 
@@ -77,17 +77,19 @@ Security policy의 경우에는, 여기서 설정을 하더라도 안녕 리눅�
 
 네트워크 설정을 완료하면 위의 화면 처럼 설정된 내용이 나오게 됩니다.
 
+RHEL7 부터는 ethernet device이름이 eth에서 다른 이름으로 변경이 되었습니다. 하지만 안녕 리눅스에서는 설치 완료 후에 eth로 다시 변경이 되게 됩니다.
+
 네트워크 설정을 완료 하였다면 **네트워크 및 호스트명(N)** 옆의 붉은색 사각형으로 표시된 **KDUMP**를 클릭 합니다.
 
 
-## 5. KDUMP 비활성화
+## 6. KDUMP 비활성화
 
 ![](VirtualBox_AnNyung3_22_01_2016_16_18_09.png)
 
 비활성화 하도록 합니다.
 
 
-## 6. 설치 시작
+## 7. 설치 시작
 
 ![](VirtualBox_AnNyung3_22_01_2016_16_18_27.png)
 
@@ -102,11 +104,58 @@ Security policy의 경우에는, 여기서 설정을 하더라도 안녕 리눅�
 ![](VirtualBox_AnNyung3_22_01_2016_16_28_01.png)
 
 
+## 8. 설치 완료 및 재부팅
 
+![](VirtualBox_AnNyung3_22_01_2016_16_31_30.png)
 
+좌측 하단의 <strong style="color: red;">재부팅(R)</strong> 버튼이 푸른색으로 활성화가 되면, 클릭하여 리부팅을 합니다.
 
+![](VirtualBox_AnNyung3_22_01_2016_16_31_53.png)
+![](VirtualBox_AnNyung3_22_01_2016_16_32_26.png)
 
+설치시에 지정한 화면으로 로그인을 합니다.
 
+## 9. 안녕 리눅스 전환
+
+드디어 안녕 리눅스 설치를 시작 합니다.
+
+![](VirtualBox_AnNyung3_22_01_2016_17_45_52.png)
+
+로그인을 한 후, 위의 이미지처럼 안녕 리눅스 bootstrap 파일을 다운로드 받아서 실행을 합니다. 안녕 리눅스의 bootstrap 파일은 다음의 URL에서 받을 수 있습니다.
+
+> http://mirror.oops.org/pub/AnNyung/3/inst/bootstrap<br>
+> http://ftp.kr.freebsd.org/pub/AnNyung/3/inst/bootstrap
+
+이 bootstarp을 실행하기 위해서는 perl이 필요 합니다. 그러므로 실행 전에 perl을 yum을 이용하여 설치를 해 줘야 합니다.
+
+```bash
+[root@localhost] yum install perl
+[root@localhost] curl -o bootstrap http://mirror.oops.org/pub/AnNyung/3/inst/bootstrap
+[root@localhost] bash bootstrap
+```
+![](VirtualBox_AnNyung3_22_01_2016_17_49_29.png)
+
+안녕 리눅스 bootstrap을 실행하면 다음과 같은 작업을 하게 됩니다.
+
+1. annyung-release package를 설치합니다.
+  1. 시스템 banner를 **AnNyung LInux**로 변경 합니다.
+  2. 콘솔 해상도를 **1024x768**로 변경 합니다.
+  3. 부팅 화면의 커널 리스트의 CentOS를 AnNyung으로 변경 합니다. (RHEL 7에서 전환할 경우에는 변경되지 않습니다. 이는 시스템상의 문제라기 보다는 CentOS라는 문자열을 AnNyung으로 변경하는 것이기 때문입니다.)
+  4. **ethernet device** 이름을 **eth**로 복원 합니다.
+  5. /etc/fstab 에서 hdd에 **noatime** 옵션을 추가 합니다.
+  6. root account를 wheel group에 추가 합니다.
+  7. **AnNyung LInux repository**가 설치 됩니다.
+  8. **EPEL repository**가 설치 됩니다.
+2. LANG 환경 변수를 **ko_KR.UTF-8** 로 설정 합니다.
+3. 시스템에 설치된 32bit package를 제거 합니다.
+4. 시스템에 설치된 패키지들을 최신 상태로 업데이트 합니다.
+5. zero configuration 설정을 제거 합니다. (wifi 환경에서는 자동 설정이 되지 않습니다.)
+6. IPv6 설정을 제거 합니다. IPv6 환경을 사용하신다면, bootstrap 파일에서 no_ipv6_off 라인을 주석 처리 하십시오.
+7. **selinux** 설정을 disable 합니다.
+8. SMTP 데몬을 부팅시에 시작하지 않도록 합니다.
+9. 기본 패키징 중에서 안녕 리눅스 패키지와 충돌이 발생하는 패키지들의 업데이트를 block 시킵니다.
+10. **yum-cron** 설정을 활성화 합니다. (1일 1회 업데이트 체크 및 업데이트)
+11. 기타 필요한 기본 패키지들을 설치합니다.
 
 
 
