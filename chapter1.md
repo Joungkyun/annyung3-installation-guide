@@ -1,5 +1,9 @@
 # CentOS 7 or RHEL 7 Minimal ISO를 이용한 설치
 
+
+2016.01.30<br>
+김정균 http://oops.org
+
 이 문서는 CentOS 7 또는 RHEL 7의 Minial ISO를 이용하셔 설치 하는 방법에 대하여 기술합니다.
 
 안녕 리눅스의 설치는 기본적으로 안녕 리눅스용 kickstart 설치 환경을 이용합니다. kickstart 설치가 가능하신 분들이나 kickstart 설치를 원하시는 분들은 [RHEL 7 install Guide](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [booting option](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-anaconda-boot-options.html) 을 참조하여 설치를 하시기 바랍니다. 안녕 리눅스용 kickstart는 다음 URL에서 받으실 수 있습니다.
@@ -175,7 +179,7 @@ grub2의 booting kernel list 입니다. banner가 **AnNyung LInux**로 변경이
 
 ![](VirtualBox_AnNyung3_22_01_2016_17_50_54.png)
 
-ethernet 이름이 다시 **eth**로 변경이 되었으며, 최초 설치 사이즈는 2.8Gbyte 입니다.
+ethernet 이름이 다시 **eth**로 변경이 되었으며, 최초 설치 사이즈는 1.3Gbyte 입니다.
 
 ![](VirtualBox_AnNyung3_22_01_2016_17_51_50.png)
 
@@ -190,22 +194,3 @@ ethernet 이름이 다시 **eth**로 변경이 되었으며, 최초 설치 사�
 ![](VirtualBox_AnNyung3_22_01_2016_17_52_20.png)
 
 firewalld 대신에 설치된 oops-firewall 이 실행된 환경이며, 기본으로 inbound는 22번 port만 open이 되어 있습니다. 그리고, 안녕 3에 설치된 oops-firewall 7.x는 outbound ACL 제어가 더욱 확실해 졌기 때문에 outbound 설정도 잘 고려해야 합니다. outbound는 기본으로 tcp 21(ftp), 22(ssh), 25(smtp), 43(ntp), 80(http), 443(https), 873(rsync) 그리고 udp 53(dnslookup), 123(snmp)이 열려 있습니다.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
