@@ -1,8 +1,9 @@
 # CentOS 7 or RHEL 7 Minimal ISO를 이용한 설치
 
+Copyright 2016 &copy; JoungKyun.Kim all rights reserved.
 
 2016.01.30<br>
-김정균 http://oops.org
+김정균 &lt; http://oops.org &gt;
 
 이 문서는 CentOS 7 또는 RHEL 7의 Minial ISO를 이용하셔 설치 하는 방법에 대하여 기술합니다.
 
