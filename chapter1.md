@@ -1,6 +1,6 @@
 # CentOS 7 or RHEL 7 Minimal ISO를 이용한 설치
 
-Copyright 2016 &copy; JoungKyun.Kim all rights reserved.
+**Copyright 2016 &copy; JoungKyun.Kim all rights reserved.**
 
 2016.01.30<br>
 김정균 &lt; http://oops.org &gt;
@@ -118,7 +118,7 @@ RHEL7 부터는 ethernet device이름이 eth에서 다른 이름으로 변경이
 ![](VirtualBox_AnNyung3_22_01_2016_16_31_53.png)
 ![](VirtualBox_AnNyung3_22_01_2016_16_32_26.png)
 
-설치시에 지정한 화면으로 로그인을 합니다.
+설치시에 지정한 암호로 로그인을 합니다.
 
 ## 9. 안녕 리눅스 전환
 
