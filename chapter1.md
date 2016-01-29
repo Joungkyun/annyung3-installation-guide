@@ -156,8 +156,40 @@ RHEL7 부터는 ethernet device이름이 eth에서 다른 이름으로 변경이
 9. 기본 패키징 중에서 안녕 리눅스 패키지와 충돌이 발생하는 패키지들의 업데이트를 block 시킵니다.
 10. **yum-cron** 설정을 활성화 합니다. (1일 1회 업데이트 체크 및 업데이트)
 11. 기타 필요한 기본 패키지들을 설치합니다.
+12. 기본 방화벽인 firewalld 를 제거하고 oops-firewall을 설치 합니다.
+  1. firewalld보다 훨씬 직관적입니다.
+  2. http://oops.org/?t=lecture&sb=firewall&n=2 문서 참조
+  3. 기본으로 22번 port만 anywhere로 열려 있습니다.
 
+bootstrap 실행이 완료되면 다시 rebooting을 하도록 합니다.
 
+## 10. 안녕 리눅스 부팅
+
+![grub2 booting list](VirtualBox_AnNyung3_22_01_2016_17_49_43.png)
+
+grub2의 booting kernel list 입니다. banner가 **AnNyung LInux**로 변경이 되었습니다.
+
+![](VirtualBox_AnNyung3_22_01_2016_17_50_07.png)
+
+**/etc/issue**의 banner가 **AnNyung LInux**로 변경이 되었으며, 콘솔 해상도가 1024*768로 변경이 되었습니다.
+
+![](VirtualBox_AnNyung3_22_01_2016_17_50_54.png)
+
+ethernet 이름이 다시 **eth**로 변경이 되었으며, 최초 설치 사이즈는 2.8Gbyte 입니다.
+
+![](VirtualBox_AnNyung3_22_01_2016_17_51_50.png)
+
+부팅시에 실행되는 daemon list 입니다. RHEL 6까지는 **ntsysv** 명령이나 **chkconfig** 명령으로 확인이 가능했지만, RHEL 7부터 systemd 도입으로 다음의 명령을 이용하면 가능 합니다.
+
+```bahs
+[root@localhost] systemctl list-unit --type=service
+[root@localhost] systemctl disable postfix  // postfix를 부팅시에 실행 안하도록
+[root@localhost] systemctl enable postfix   // postfix를 부팅시에 실행 하도록
+```
+
+![](VirtualBox_AnNyung3_22_01_2016_17_52_20.png)
+
+firewalld 대신에 설치된 oops-firewall 이 실행된 환경이며, 기본으로 inbound는 22번 port만 open이 되어 있습니다. 그리고, 안녕 3에 설치된 oops-firewall 7.x는 outbound ACL 제어가 더욱 확실해 졌기 때문에 outbound 설정도 잘 고려해야 합니다. outbound는 기본으로 tcp 21(ftp), 22(ssh), 25(smtp), 43(ntp), 80(http), 443(https), 873(rsync) 그리고 udp 53(dnslookup), 123(snmp)이 열려 있습니다.
 
 
 
