@@ -31,7 +31,7 @@
 
 1. [CentOS 7 or RHEL 7 Minimal ISO를 이용한 설치](chapter1.html)
 2. [CentOS 7 or RHEL 7 Network Install ISO를 이용한 설치](chapter2.html)
-3. [Xen Server 환경에서의 설치](chapter3.html)
+3. [Xen Server의 guest os로 설치](chapter3.html)
 
 기본적으로는, <u style="color: #777;">"2. CentOS 7 또는 RHEL 7의 Network Install ISO를 이용한 설치"</u> 방법을 권장 합니다.
 
