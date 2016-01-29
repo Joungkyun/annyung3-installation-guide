@@ -54,6 +54,64 @@ Security policy의 경우에는, 여기서 설정을 하더라도 안녕 리눅�
 ![](VirtualBox_AnNyung3_22_01_2016_16_15_22.png)
 ![](VirtualBox_AnNyung3_22_01_2016_16_16_51.png)
 ![](VirtualBox_AnNyung3_22_01_2016_16_17_07.png)
+![](VirtualBox_AnNyung3_22_01_2016_16_17_47.png)
+
+파티셔닝이 완료가 되면 위의 이미지처럼 **설치 대상(D)** 아래에 설정 사항이 나오게 됩니다.
+
+다음 네트워크 설정을 위해서는 이미지의 붉은색 사각형 표시 부분을 클릭 합니다.
+
+<strong style="color: red;">주의</strong>: disk가 여러개일 경우에는 booting partion 설정에 주의하십시오.
 
 
 ## 4. 네트워크 설정
+
+네트워크 설정에 대해서는 [RHEL 7 install Guide](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [네트워크 및 호스트명(N)](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-anaconda-boot-options.html) 문서를 참조 하시기 바랍니니다.
+
+여기서는 static IP를 설정하는 이미지를 보여 드립니다. 네트워크 설정은 각각의 환경에 맞게 설정을 해 주시면 됩니다.
+
+![](VirtualBox_AnNyung3_22_01_2016_16_18_56.png)
+![](VirtualBox_AnNyung3_22_01_2016_16_25_17.png)
+![](VirtualBox_AnNyung3_22_01_2016_16_25_32.png)
+![](VirtualBox_AnNyung3_22_01_2016_16_25_55.png)
+![](VirtualBox_AnNyung3_22_01_2016_16_26_16.png)
+
+네트워크 설정을 완료하면 위의 화면 처럼 설정된 내용이 나오게 됩니다.
+
+네트워크 설정을 완료 하였다면 **네트워크 및 호스트명(N)** 옆의 붉은색 사각형으로 표시된 **KDUMP**를 클릭 합니다.
+
+
+## 5. KDUMP 비활성화
+
+![](VirtualBox_AnNyung3_22_01_2016_16_18_09.png)
+
+비활성화 하도록 합니다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
