@@ -87,6 +87,16 @@ Security policy의 경우에는, 여기서 설정을 하더라도 안녕 리눅�
 비활성화 하도록 합니다.
 
 
+## 6. 설치 시작
+
+![](VirtualBox_AnNyung3_22_01_2016_16_18_27.png)
+
+여기까지 진행이 되었다면, 위의 이미지와 같이 우측 하단의 <strong style="color: red;">설치 시작(B)</strong> 버튼이 푸른색으로 활성화가 됩니다. 이 <strong style="color: red;">설치 시작(B)</strong> 버튼을 클릭하면 설치가 시작이 됩니다.
+
+
+
+
+
 
 
 
