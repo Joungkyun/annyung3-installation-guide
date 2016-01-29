@@ -33,5 +33,7 @@
 2. CentOS 7 or RHEL 7 Network Install ISO를 이용한 설치
 3. Xen Server 환경에서의 설치
 
-이 외에, 환경이 가능 하다면, Amazon cloud에서의 설치 방법까지 제공할 예정입니다. (아직 미정)
+기본적으로는, <u style="color: #777;">"2. CentOS 7 또는 RHEL 7의 Network Install ISO를 이용한 설치"</u> 방법을 권장 합니다.
+
+이 외에, 환경이 가능 하다면, ~~Amazon cloud에서의 설치 방법~~까지 제공할 예정입니다. (아직 미정)
 
