@@ -17,6 +17,7 @@ Not Yet!
 
 Netinstall을 이용하여 설치할 경우에는 안녕 리눅스 kickstart를 호출하여 설치를 하기 때문에 dist partitioning과 root 암호 설정 및 user account 추가 3가지만 설정을 해 주면 됩니다.
 
+
 ## 1. CDROM 또는 USB 부팅
 
 준비한 Netinstall ISO를 이용하여 만든 booting 매채(CDROM or USB)를 이용하여 booting 을 합니다.
@@ -72,4 +73,4 @@ command option으로 위와 같이 옵션을 추가해 주도록 합니다. ip�
  
  ![](VirtualBox_AnNyung3_22_01_2016_19_04_29.png)
  
- 안녕 리눅스의 kickstart 설정으로 왠만한 것은
+ 안녕 리눅스의 kickstart 설정으로 위의 이미지의 붉은 박스 안에 표시된 "**_설치 대상(D)_**" 의 disk partioning만 해 주시면 됩니다.
