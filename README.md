@@ -1,7 +1,8 @@
 안녕 리눅스 3 설치 가이드
 =======
 
-<img src="http://annyung.oops.org/gallery/gura.gif" width="400" height="400" title="안녕 리눅스 마스코드 Gura" alt="안녕 리눅스 마스코드 Gura">
+<div>
+<img src="http://annyung.oops.org/gallery/gura.gif" width="400" height="400" title="안녕 리눅스 마스코드 Gura" alt="안녕 리눅스 마스코드 Gura" class="align-left">
 
 이 문서의 목적은 안녕 리눅스 3를 설치하는 방법을 가이드 합니다.
 
@@ -36,3 +37,4 @@
 기본적으로는, <u style="color: #777;">"2. CentOS 7 또는 RHEL 7의 Network Install ISO를 이용한 설치"</u> 방법을 권장 합니다.
 
 이 외에, 환경이 가능 하다면, ~~Amazon cloud에서의 설치 방법~~까지 제공할 예정입니다. (아직 미정)
+</div>
