@@ -140,6 +140,18 @@ RHEL 7부터는 installer에도 systemd가 도입이 되었기 때문에 설치�
 
 ![](VirtualBox_AnNyung3_22_01_2016_19_17_46.png)
 
+ethernet 이름이 다시 **eth**로 변경이 되었으며, 최초 설치 사이즈는 1.3Gbyte 입니다.
 
 ![](VirtualBox_AnNyung3_22_01_2016_19_18_12.png)
+
+부팅시에 실행되는 daemon list 입니다. RHEL 6까지는 **ntsysv** 명령이나 **chkconfig** 명령으로 확인이 가능했지만, RHEL 7부터 systemd 도입으로 다음의 명령을 이용하면 가능 합니다.
+
+```bahs
+[root@localhost /root] systemctl list-unit --type=service
+[root@localhost /root] systemctl disable postfix  // postfix를 부팅시에 실행 안하도록
+[root@localhost /root] systemctl enable postfix   // postfix를 부팅시에 실행 하도록
+```
+
 ![](VirtualBox_AnNyung3_22_01_2016_19_18_39.png)
+
+firewalld 대신에 설치된 oops-firewall 이 실행된 환경이며, 기본으로 inbound는 22번 port만 open이 되어 있습니다. 그리고, 안녕 3에 설치된 oops-firewall 7.x는 outbound ACL 제어가 더욱 확실해 졌기 때문에 outbound 설정도 잘 고려해야 합니다. outbound는 기본으로 tcp 21(ftp), 22(ssh), 25(smtp), 43(ntp), 80(http), 443(https), 873(rsync) 그리고 udp 53(dnslookup), 123(snmp)이 열려 있습니다.
