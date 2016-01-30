@@ -88,7 +88,7 @@ command option으로 위와 같이 옵션을 추가해 주도록 합니다. ip�
 부팅 옵션에 대한 자세한 설명은 [RHEL 7 설치 가이드](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [부트옵션](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-anaconda-boot-options.html) 섹션을 참고 하십시오.
 
 
-## 3. VNC 연결
+## 5. VNC 연결
 
 
  
