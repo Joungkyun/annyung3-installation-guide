@@ -69,8 +69,31 @@ command option으로 위와 같이 옵션을 추가해 주도록 합니다. ip�
  
  부팅 옵션을 입력한 후, 엔터를 누르면 설치 화면으로 넘어가게 됩니다.
  
- ## 기본 설치 화면
+ 
+ ## 2. 기본 설치 화면
  
  ![](VirtualBox_AnNyung3_22_01_2016_19_04_29.png)
  
  안녕 리눅스의 kickstart 설정으로 위의 이미지의 붉은 박스 안에 표시된 "**_설치 대상(D)_**" 의 disk partioning만 해 주시면 됩니다.
+ 
+ 
+## 3. 디스크 파티션
+
+필자는 자동 파티셔닝과 LVM을 선호하지 않고, 또한 통파티션을 선호하기 때문에 아래의 디스크 파티션 이미지는 필자의 선호에 의한 화면을 보여 줍니다.
+
+디스크 파티션의 경우 안녕 리눅스 설치에 큰 영향을 주지 않기 때문에 설치하시는 분들의 선호에 맞게 해 주시면 되겠습니다.
+
+디스크 파티션닝에 대해서는 [RHEL 7 install Guide](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [설치 대상](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-anaconda-boot-options.html) 문서를 참조 하시기 바랍니니다.
+
+디스크 파티셔닝을 하기 위해서는 **3. 기본 설치 화면**의 붉은색 사각형으로 표시되어 있는 **설치 대상(D)** 를 클릭 합니다.
+
+![](VirtualBox_AnNyung3_22_01_2016_16_15_22.png)
+![](VirtualBox_AnNyung3_22_01_2016_16_16_51.png)
+![](VirtualBox_AnNyung3_22_01_2016_16_17_07.png)
+![](VirtualBox_AnNyung3_22_01_2016_16_17_47.png)
+
+파티셔닝이 완료가 되면 위의 이미지처럼 **설치 대상(D)** 아래에 설정 사항이 나오게 됩니다.
+
+다음 네트워크 설정을 위해서는 이미지의 붉은색 사각형 표시 부분을 클릭 합니다.
+
+<strong style="color: red;">주의</strong>: disk가 여러개일 경우에는 booting partion 설정에 주의하십시오.
