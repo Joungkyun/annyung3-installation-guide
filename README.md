@@ -1,7 +1,7 @@
 안녕 리눅스 3 설치 가이드
 =======
 
-<p class="align-left"><img src="http://annyung.oops.org/gallery/gura.gif" width="400" height="400" title="안녕 리눅스 마스코드 Gura" alt="안녕 리눅스 마스코드 Gura"></p>
+<img src="http://annyung.oops.org/gallery/gura.gif" width="400" height="400" title="안녕 리눅스 마스코드 Gura" alt="안녕 리눅스 마스코드 Gura">
 
 이 문서의 목적은 안녕 리눅스 3를 설치하는 방법을 가이드 합니다.
 
