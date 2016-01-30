@@ -121,3 +121,10 @@ RHEL 7부터는 installer에도 systemd가 도입이 되었기 때문에 설치�
 주의할 것은, 안녕 리눅스 전환 후에 원격으로 ROOT shell login이 기본으로 차단이 되게 됩니다. 그러므로 일반 유저를 꼭 등록을 하여야 하며, 아래 이미지와 같이 root 계정으로 sudo 나 su를 할 수 있는 환경을 만들어 주십시오.
 
 ![](VirtualBox_AnNyung3_22_01_2016_16_28_01.png)
+
+
+## 5. 설치 완료 및 재부팅
+
+![](VirtualBox_AnNyung3_22_01_2016_16_31_30.png)
+
+좌측 하단의 <strong style="color: red;">재부팅(R)</strong> 버튼이 푸른색으로 활성화가 되면, 클릭하여 리부팅을 합니다.
