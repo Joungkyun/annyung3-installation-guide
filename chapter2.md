@@ -133,3 +133,5 @@ RHEL 7부터는 installer에도 systemd가 도입이 되었기 때문에 설치�
 ![](VirtualBox_AnNyung3_22_01_2016_19_16_53.png)
 
 부팅을 하면 위의 화면과 같이 AnNyung LInux를 만날 수 있습니다. 다만 RHEL installer로 진행을 했을 경우에는 배너가 변경이 되지 않으니 참고 하시기 바랍니다.
+
+설치시 지정한 암호를 이용하여 root로 로그인을 합니다.
