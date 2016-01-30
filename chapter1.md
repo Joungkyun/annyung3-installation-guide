@@ -172,7 +172,7 @@ bootstrap 실행이 완료되면 다시 rebooting을 하도록 합니다.
 
 ![grub2 booting list](VirtualBox_AnNyung3_22_01_2016_17_49_43.png)
 
-grub2의 booting kernel list 입니다. banner가 **AnNyung LInux**로 변경이 되었습니다.
+grub2의 booting kernel list 입니다. banner가 **AnNyung LInux**로 변경이 되었습니다. RHEL installer로 진행을 했을 경우에는 AnNyung LInux라고 나오지 않을 수도 있습니다. 그러니 문제가 있다고 생각할 필요는 없습니다.
 
 ![](VirtualBox_AnNyung3_22_01_2016_17_50_07.png)
 
