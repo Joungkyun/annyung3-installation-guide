@@ -128,3 +128,8 @@ RHEL 7부터는 installer에도 systemd가 도입이 되었기 때문에 설치�
 ![](VirtualBox_AnNyung3_22_01_2016_16_31_30.png)
 
 좌측 하단의 <strong style="color: red;">재부팅(R)</strong> 버튼이 푸른색으로 활성화가 되면, 클릭하여 리부팅을 합니다.
+
+![](VirtualBox_AnNyung3_22_01_2016_19_16_24.png)
+![](VirtualBox_AnNyung3_22_01_2016_19_16_53.png)
+
+부팅을 하면 위의 화면과 같이 AnNyung LInux를 만날 수 있습니다. 다만 RHEL installer로 진행을 했을 경우에는 배너가 변경이 되지 않으니 참고 하시기 바랍니다.
