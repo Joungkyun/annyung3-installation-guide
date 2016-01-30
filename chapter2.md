@@ -76,6 +76,8 @@ command option으로 위와 같이 옵션을 추가해 주도록 합니다. ip�
  
  안녕 리눅스의 kickstart 설정으로 위의 이미지의 붉은 박스 안에 표시된 "**_설치 대상(D)_**" 의 disk partioning만 해 주시면 됩니다.
  
+ "**_네트워크 및 호스트명(N)_**"에 표기된 ethernet deivce 이름이 "**enp0s3**"과 같이 표기 되어 있더라도 안녕 리눅스는 설치 후 ehternet device이름을 이전 버전에서 처럼 "**eth**"로 사용하도록 변경을 하오니 참고 하시기 바랍니다.
+ 
  
 ## 3. 디스크 파티션
 
@@ -85,15 +87,13 @@ command option으로 위와 같이 옵션을 추가해 주도록 합니다. ip�
 
 디스크 파티션닝에 대해서는 [RHEL 7 install Guide](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [설치 대상](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-anaconda-boot-options.html) 문서를 참조 하시기 바랍니니다.
 
-디스크 파티셔닝을 하기 위해서는 **3. 기본 설치 화면**의 붉은색 사각형으로 표시되어 있는 **설치 대상(D)** 를 클릭 합니다.
+디스크 파티셔닝을 하기 위해서는 **2. 기본 설치 화면**의 붉은색 사각형으로 표시되어 있는 **설치 대상(D)** 를 클릭 합니다.
 
 ![](VirtualBox_AnNyung3_22_01_2016_16_15_22.png)
 ![](VirtualBox_AnNyung3_22_01_2016_16_16_51.png)
 ![](VirtualBox_AnNyung3_22_01_2016_16_17_07.png)
-![](VirtualBox_AnNyung3_22_01_2016_16_17_47.png)
+![](VirtualBox_AnNyung3_22_01_2016_19_06_21.png)
 
-파티셔닝이 완료가 되면 위의 이미지처럼 **설치 대상(D)** 아래에 설정 사항이 나오게 됩니다.
-
-다음 네트워크 설정을 위해서는 이미지의 붉은색 사각형 표시 부분을 클릭 합니다.
+파티셔닝이 완료가 좌측 하단의 푸른색 "**_설치 시작(B)_**" 버튼을 클릭하여 설치를 시작 합니다.
 
 <strong style="color: red;">주의</strong>: disk가 여러개일 경우에는 booting partion 설정에 주의하십시오.
