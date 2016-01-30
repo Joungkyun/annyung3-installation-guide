@@ -1,1 +1,5 @@
-{}
+{
+    "styles": {
+        "default": "styles/print.css"
+    }
+}
