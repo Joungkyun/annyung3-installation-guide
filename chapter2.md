@@ -140,7 +140,7 @@ RHEL 7부터는 installer에도 systemd가 도입이 되었기 때문에 설치�
 
 ![](VirtualBox_AnNyung3_22_01_2016_19_17_46.png)
 
-ethernet 이름이 다시 **eth**로 변경이 되었으며, 최초 설치 사이즈는 1.3Gbyte 입니다.
+ethernet 이름이 다시 **eth**로 변경이 되었으며, 최초 설치 사이즈는 1.1Gbyte 입니다.
 
 ![](VirtualBox_AnNyung3_22_01_2016_19_18_12.png)
 
