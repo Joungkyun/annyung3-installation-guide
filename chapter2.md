@@ -15,6 +15,8 @@ Not Yet!
 
 다음의 설명은 일반적인 CentOS 7이나 RHEL 7의 설치와 동일하며, 안녕 설치를 좀 더 깔끔하게 할 수 있는 옵션 선정을 제공 합니다.
 
+Netinstall을 이용하여 설치할 경우에는 안녕 리눅스 kickstart를 호출하여 설치를 하기 때문에 dist partitioning과 root 암호 설정 및 user account 추가 3가지만 설정을 해 주면 됩니다.
+
 ## 1. CDROM 또는 USB 부팅
 
 준비한 Netinstall ISO를 이용하여 만든 booting 매채(CDROM or USB)를 이용하여 booting 을 합니다.
@@ -65,3 +67,9 @@ command option으로 위와 같이 옵션을 추가해 주도록 합니다. ip�
  부팅 옵션에 대한 자세한 설명은 [RHEL 7 설치 가이드](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [부트옵션](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-anaconda-boot-options.html) 섹션을 참고 하십시오.
  
  부팅 옵션을 입력한 후, 엔터를 누르면 설치 화면으로 넘어가게 됩니다.
+ 
+ ## 기본 설치 화면
+ 
+ ![](VirtualBox_AnNyung3_22_01_2016_19_04_29.png)
+ 
+ 안녕 리눅스의 kickstart 설정으로 왠만한 것은
