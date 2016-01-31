@@ -44,7 +44,7 @@ Xen Center의 트리에 보여지는 이름을 설정 합니다. 보통은 서�
 
 installation method는 "**Insatll From URL:**"을 선택 하도록 하고 CentOS 7의 boot image가 있는 URL을 지정해 줍니다. 한국의 mirror는 다음 중에 하나를 사용하실 수 있습니다.
 
-> 1. http://ftp.daum.net/centos/7/os/x86_64
+> 1. http://ftp.daumkakao.com/centos/7/os/x86_64/
 2. http://centos.tt.co.kr/7/os/x86_64
 3. http://centos.mirror.cdnetworks.com/7/os/x86_64
 
@@ -85,12 +85,17 @@ command option으로 위와 같이 옵션을 추가해 주도록 합니다. ip�
   안녕 리눅스의 설치 정보가 들어 있는 kickstart file을 지정합니다. 만약 mirror.oops.org가 장애가 있을 경우에는 http://ftp.kr.freebsd.org/pub/AnNyung/3/inst/AnNyung.ks 를 이용할 수 있습니다.
 
 * **inst.vnc**<br>
-  CentOS/RHEL 7의 installer의 경우 text mode 설치가 굉장히 번거롭기 때문에 graphical mode로 설치를 하는 것이 편합니다. 하지만, Xen Center의 console로는 graphical 설치가 불가능 하기 때문에 VNC를 이용하여 GUI 설치를 시도하는 방법을 제시 합니다. 아무런 옵션 없이 "**inst.vnc**"만 추가를 해 주면 됩니다. 
+  CentOS/RHEL 7의 installer의 경우 text mode 설치가 굉장히 번거롭기 때문에 graphical mode로 설치를 하는 것이 편합니다. 하지만, Xen Center의 console로는 graphical 설치가 불가능 하기 때문에 VNC를 이용하여 GUI 설치를 시도하는 방법을 제시 합니다. 아무런 옵션 없이 "**inst.vnc**"만 추가를 해 주면 됩니다. 만약, kickstart 에서 disk partition과 root 암호, account 생성까지 처리를 하신다면, kickstart를 text mode로 지정하여 VNC 없이 진행하는 것도 가능 합니다. 이 방법은 DIY 하시기 바랍니다.
 
 부팅 옵션에 대한 자세한 설명은 [RHEL 7 설치 가이드](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [부트옵션](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-anaconda-boot-options.html) 섹션을 참고 하십시오.
 
 
 ## 5. VNC 연결
 
-
+VNC를 이용한 설치 방법에 대한 자세한 설명은 [RHEL 7 설치 가이드](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [22장. VNC를 사용하여 설치하기](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-vnc-installations.html) 섹션을 참고 하십시오.
  
+이 문서에서는 [RHEL 7 설치 가이드](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [22장. VNC를 사용하여 설치하기](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-vnc-installations.html) 섹션에서 예를 든, VNC viewer를 TigerVNC가 아닌 [TightVNC](http://www.tightvnc.com/)를 이용하여 진행을 합니다.
+
+> 다운로드: http://www.tightvnc.com/download.php
+
+Xen Center의 NewVM을 생성한 후에, guest os를 실행합니다.
