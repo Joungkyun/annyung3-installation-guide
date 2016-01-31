@@ -125,7 +125,7 @@ RHEL 7부터는 installer에도 systemd가 도입이 되었기 때문에 설치�
 
 ![](VirtualBox_AnNyung3_22_01_2016_16_31_30.png)
 
-좌측 하단의 <strong style="color: red;">재부팅(R)</strong> 버튼이 푸른색으로 활성화가 되면, 클릭하여 리부팅을 합니다.
+좌측 하단의 <strong style="color: red;">재부팅(R)</strong> 버튼이 푸른색으로 활성화가 되면, 클릭하여 리부팅을 합니다. AnNyung.ks 를 이용하여 설치하는 경우, 설치가 완료가 되면 자동으로 재시작 하도록 되어 있어 이 화면은 띄지 않을 수도 있습니다.
 
 ![](VirtualBox_AnNyung3_22_01_2016_19_16_24.png)
 ![](VirtualBox_AnNyung3_22_01_2016_19_16_53.png)
