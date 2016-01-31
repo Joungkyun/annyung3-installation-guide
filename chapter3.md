@@ -99,3 +99,15 @@ VNC를 이용한 설치 방법에 대한 자세한 설명은 [RHEL 7 설치 가�
 > 다운로드: http://www.tightvnc.com/download.php
 
 Xen Center의 NewVM을 생성한 후에, guest os를 실행합니다.
+
+![](xen-005.jpg)
+
+geuset OS를 시작하고 Xen Center의 console에서 보면 위의 이미지와 같이 VNC 서버가 뜨게 됩니다.
+
+![](xen-004.jpg)
+
+다음, 설치한 TightVNC viewer를 실행하고, Xen Center console에 뜬 VNC 접속 주소를 Remote Host에 입력해 줍니다. 현재 예제에서는 Xen Center console에는 "**open-new.#######:1**" 이라고 되어 있고, VNC viewer의 Remote Host에는 "**192.168.0.227:1**" 이라고 다르게 되어 있는데, 이는 예제 파일을 만들다 보니 다르게 되어 있을 뿐, 실제로는 Xen Center Console에 뜬 "**주소:1**" 즉 domain.com:1 또는 1.1.1.1:1 처럼 넣어 주시면 됩니다.
+
+![](xen-006.jpg)
+
+VNC 접속이 이루어지고, GUI installer가 VNC viewer에 뜬 모습니다.
