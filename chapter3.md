@@ -90,7 +90,7 @@ command option으로 위와 같이 옵션을 추가해 주도록 합니다. ip�
 부팅 옵션에 대한 자세한 설명은 [RHEL 7 설치 가이드](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [부트옵션](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-anaconda-boot-options.html) 섹션을 참고 하십시오.
 
 
-## 5. VNC 연결
+## 5. VNC 연결 및 설치
 
 VNC를 이용한 설치 방법에 대한 자세한 설명은 [RHEL 7 설치 가이드](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [22장. VNC를 사용하여 설치하기](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-vnc-installations.html) 섹션을 참고 하십시오.
  
@@ -134,5 +134,12 @@ ROOT 암호 변경 페이지 입니다.
 
 일반 사용자 계정 추가 페이지 입니다.
 
-![](xen-011.jpg)
-![](xen-012.jpg)
+<strong style="color:red;">참고!!</strong> 주의할 것은, 생성한 일반 유저는 최초 접속시에 무조건 암호를 변경 되도록 되어 있습니다. 이는 ISMS 보안 심사를 위한 설정에 의하여 적용된 사항이므로, 다른 배포본과의 차이 입니다.
+
+![설치 완료 이미지](xen-011.jpg)
+
+AnNyung.ks 를 이용하여 설치를 하면, 설치 완료 후 자동 부팅이 되므로, 위의 이미지와 같이 설치 완료시에 VNC 접속이 끊어지게 되오니, 당황할 필요 없이 VNC viewer를 종료 시키면 됩니다.
+
+![로그인 화면](xen-012.jpg)
+
+VNC 연결 종료 후, Xen Center의 console로 돌아가 보면 위의 이미지처럼 로그인 화면이 띄게 됩니다. 설치시에 지정하였던 ROOT 암호를 이용하여 로그인을 하면 됩니다.
