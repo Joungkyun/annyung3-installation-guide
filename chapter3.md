@@ -50,7 +50,7 @@ installation method는 "**Insatll From URL:**"을 선택 하도록 하고 CentOS
 
 다음, 하단의 "**Advanced OS boot parameters**"에 다음의 옵션을 추가해 줍니다.
 
-    ip=YOUR_SERVER_IP::GATEWAY_IP:SUBNET_MASK:HOSTNAME::none nameserver=8.8.8.8 inst.ks=http://mirror.oops.org/pub/AnNyung/3/inst/AnNyung.ks inst.vnc
+    ip=YOUR_SERVER_IP::GATEWAY_IP:SUBNET_MASK:HOSTNAME::none nameserver=8.8.8.8 inst.vnc inst.ks=http://mirror.oops.org/pub/AnNyung/3/inst/AnNyung.ks
 
 안녕 리눅스 2에서 처럼 asknetwork은 더이상 지원하지 않기 때문에, boot parameters에서 이제는 IP설정을 직접 해 줘야 합니다.
 
