@@ -12,6 +12,8 @@ Not Yet!
 
 이 문서에서는 Xen Center를 이용하여 OS를 설치하는 과정을 모두 설명하지는 않습니다.
 
+또는, Xen Center를 이용하여 CentOS 7을 설치가 가능하신 분은 Installer에서 Core package만 설치 하신 후에, <a href="chapter1.html">"**1. CentOS/RHEL 7 Miniamll ISO를 이용한 설치**"</a> 문서의 "**9. 안녕 리눅스 전환**" 항목을 참고 하여 진행할 수 있습니다.
+
 
 ## 1. New VM 생성
 
