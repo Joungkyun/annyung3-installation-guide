@@ -111,3 +111,28 @@ geuset OS를 시작하고 Xen Center의 console에서 보면 위의 이미지와
 ![](xen-006.jpg)
 
 VNC 접속이 이루어지고, GUI installer가 VNC viewer에 뜬 모습니다.
+
+## 6. 설치 시작
+
+여기서 부터는 Miniall ISO또는 Network Install ISO를 이용한 방법과 동일하게 진행이 됩니다.
+
+![](xen-007.jpg)
+
+disk partitioning을 완료하고 우측 하단의 푸른색 "**설치 시작(D)**" 버튼을 클릭하여 설치를 시작합니다.
+
+
+![](xen-008.jpg)
+
+설치가 되는 동안, ROOT 암호와 user account를 생성 합니다.
+
+
+![ROOT 암호 변경](xen-009.jpg)
+
+ROOT 암호 변경 페이지 입니다.
+
+![일반 계정 생성](xen-010.jpg)
+
+일반 사용자 계정 추가 페이지 입니다.
+
+![](xen-011.jpg)
+![](xen-012.jpg)
