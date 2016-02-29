@@ -3,7 +3,7 @@
 Not Yet!
 **Copyright 2016 &copy; JoungKyun.Kim all rights reserved.**
 
-2016.01.30<br>
+2016.02.29<br>
 김정균 &lt; http://oops.org &gt;
 
 이 문서는 Xen Server에 안녕 리눅스 3을 설치하는 방법을 기술 합니다.
