@@ -146,8 +146,8 @@ ethernet 이름이 다시 **eth**로 변경이 되었으며, 최초 설치 사�
 
 ```bahs
 [root@localhost /root] systemctl list-units --type=service
-[root@localhost /root] systemctl disable postfix  // postfix를 부팅시에 실행 안하도록
-[root@localhost /root] systemctl enable postfix   // postfix를 부팅시에 실행 하도록
+[root@localhost /root] systemctl disable postfix  # postfix를 부팅시에 실행 안하도록
+[root@localhost /root] systemctl enable postfix   # postfix를 부팅시에 실행 하도록
 ```
 
 ![](VirtualBox_AnNyung3_22_01_2016_19_18_39.png)
