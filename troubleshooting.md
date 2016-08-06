@@ -78,5 +78,11 @@ registed
 
 다음, 리부팅을 하여 확인을 해 봅니다.
 
+***참조:***
+1. http://serverfault.com/questions/611182/centos-7-x64-and-hp-proliant-dl360-g5-scsi-controller-compatibility
+2. https://www.centos.org/forums/viewtopic.php?f=49&t=48032
+3. https://wiki.sabayon.org/index.php?title=HOWTO:_Using_Custom_Framebuffer_Resolution_with_GRUB2
+4. https://kldp.org/node/154906
+
 
 
