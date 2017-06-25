@@ -90,7 +90,12 @@ command option으로 위와 같이 옵션을 추가해 주도록 합니다. ip�
 부팅 옵션에 대한 자세한 설명은 [RHEL 7 설치 가이드](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [부트옵션](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-anaconda-boot-options.html) 섹션을 참고 하십시오.
 
 
-## 5. VNC 연결 및 설치
+## 5. CPU & Memory
+
+CentOS 7.1 부터는 install image의 크기가 커져서 설치시에 Memory가 최소한 2G가 필요 합니다. **_CentOS 6 (64-bit)_** template은 기본으로 Memory를 1G를 잡기 때문에, 최소한 2G 이상으로 지정해 주어야 합니다.
+
+
+## 6. VNC 연결 및 설치
 
 VNC를 이용한 설치 방법에 대한 자세한 설명은 [RHEL 7 설치 가이드](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [22장. VNC를 사용하여 설치하기](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-vnc-installations.html) 섹션을 참고 하십시오.
  
@@ -112,7 +117,7 @@ geuset OS를 시작하고 Xen Center의 console에서 보면 위의 이미지와
 
 VNC 접속이 이루어지고, GUI installer가 VNC viewer에 뜬 모습니다.
 
-## 6. 설치 시작
+## 7. 설치 시작
 
 여기서 부터는 Miniall ISO또는 Network Install ISO를 이용한 방법과 동일하게 진행이 됩니다.
 
@@ -146,7 +151,7 @@ AnNyung.ks 를 이용하여 설치를 하면, 설치 완료 후 자동 부팅이
 VNC 연결 종료 후, Xen Center의 console로 돌아가 보면 위의 이미지처럼 로그인 화면이 띄게 됩니다. 설치시에 지정하였던 ROOT 암호를 이용하여 로그인을 하면 됩니다.
 
 
-## 7. 안녕 리눅스 운영상 참고 사항
+## 8. 안녕 리눅스 운영상 참고 사항
 
 안녕 리눅스 3은 ISMS 인증 심사 관련 설정이 deploy 되어 있기 때문에 이 설정으로 인한 운영상의 문제가 발생할 수 있습니다. 그러니 다음의 문서를 꼭 참고하여 운영상의 이슈에 대하여 대비 하시기 바랍니다.
 
