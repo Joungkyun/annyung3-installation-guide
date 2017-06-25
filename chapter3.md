@@ -30,6 +30,8 @@ CentOS 7 template을 선택할 경우, Xen server의 local cdrom 또는 Bootp만
 
 그러므로, template은 **_CentOS 6 (64-bit)_** 을 선택하도록 합니다.
 
+PXE 설치가 가능한 경우에는 **_CentOS 7_** template으로 설치가 가능하며, 이 경우 기능이 향상된 **_XenCenter_** console을 사용할 수 있습니다.
+
 
 ## 3. Name 설정
 
