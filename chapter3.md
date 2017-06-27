@@ -24,7 +24,7 @@ CentOS 7 template에서는 더이상 "***install from URL***" 방법이 지원�
 
 ***PXE*** 설치 환경이 가능하시면 ***PXE 설치*** 를 이용하시면 됩니다.
 
-***PXE 설치*** 환경이 없다면, 다음의 작업을 이용하여 가상 CD-ROM 설치가 가능 합니다.
+***PXE 설치*** 환경이 없고 서버의 CD-ROM에 접근이 불가능 하다면, 다음의 작업을 이용하여 가상 CD-ROM 설치가 가능 합니다.
 
 다음 작업은 XenServer Host 에서 실행 합니다. (Guest VM에서 하지 않습니다.)
 
@@ -69,21 +69,54 @@ Xen Center의 트리에 보여지는 이름을 설정 합니다. 보통은 서�
 ## 4. Insatll Media 설정
 
 ![Insatll Media 설정 이미지](/assets/xen-003.jpg)
+![Insatll Media 설정 이미지](/assets/xen72-001.jpg)
 
-installation method는 "**Insatll From URL:**"을 선택 하도록 하고 CentOS 7의 boot image가 있는 URL을 지정해 줍니다. 한국의 mirror는 다음 중에 하나를 사용하실 수 있습니다.
+***PXE 설치 환경*** 이 있다면, ***Boot from network***을 선택 합니다. 여기서는 ***가상 CD-ROM*** 을 이용한 환경으로 설명을 합니다.
 
-> 1. http://ftp.daumkakao.com/centos/7/os/x86_64/
-2. http://centos.tt.co.kr/7/os/x86_64
-3. http://centos.mirror.cdnetworks.com/7/os/x86_64
+CD-ROM 이 있다면 CD-ROM을 선택 하시고, 가상 CD-ROM 작업을 하였다면, isos 아래의 ISO 파일을 선택 하도록 합니다.
 
-다음, 하단의 "**Advanced OS boot parameters**"에 다음의 옵션을 추가해 줍니다.
 
-    ip=YOUR_SERVER_IP::GATEWAY_IP:SUBNET_MASK:HOSTNAME::none nameserver=8.8.8.8 inst.vnc inst.ks=http://mirror.oops.org/pub/AnNyung/3/inst/AnNyung.ks
+## 5. CPU & Memory
 
-안녕 리눅스 2에서 처럼 asknetwork은 더이상 지원하지 않기 때문에, boot parameters에서 이제는 IP설정을 직접 해 줘야 합니다.
+![CPU 및 메모리 설정](/assets/xen72-002.jpg)
+
+***vCPU***는 원하시는 만큼 설정을 하십시오. 최대값은 ***실제 core 수*** 보다 많지 않게 합니다. 참고로 ***XenServer*** 의 경우 CPU core를 hard하게 분배하지 않기 때문에, full 로 잡는 것을 개인적으로 권장 합니다.
+
+메모리의 경우, CentOS 7.1 부터는 install image의 크기가 커져서 설치 시에 Memory가 최소한 ***2G*** 가 필요 합니다. 그러므로, 2G 이하로 잡고 싶다면 설치를 마친 후에 Guest 설정에서 메모리를 줄여 주시면 됩니다.
+
+
+## 6. 설치 시작
+
+![](VirtualBox_AnNyung3_22_01_2016_19_02_05.png)
+
+VM을 시작하여 Installer 가 구동이 되면 제일 처음은 위와 같은 화면이 나오게 됩니다.
+
+화살표 키를 이용하여 이미지 상의 붉은 색 상자로 표시되어 있는 "**Install CentOS 7**" 을 선택을 선택한 후에, "**Tab**" 키를 누릅니다. 그러면 아래의 이미지와 같이 하단에 booting option을 입력할 수 있게 됩니다. 만약 UEFI 기반의 시스템일 경우에는 "**e**"키를 눌러서 booting option을 입력할 수 있습니다.
+
+이 부분이 잘 이해가 되지 않는다면 [RHEL 7 설치 가이드](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [부트메뉴](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/sect-boot-menu-x86.html) 섹션을 참고 하십시오.
+
+![](VirtualBox_AnNyung3_30_01_2016_17_23_08.png)
+
+여기에 아래와 같이 안녕 리눅스 설치를 위한 옵션을 추가해 줍니다.
+
+![](VirtualBox_AnNyung3_22_01_2016_19_03_12.png)
+
+RHEL 7에서 systemd를 도입하면서, installer인 Anaconda에도 systemd가 도입이 되면서 네트워크 인스톨 시에 IP를 입력하던 UI가 사라지고 이처럼 command line에서 IP를 지정을 해 줘야 하는 불편함이 생겼습니다. 여기서 IP를 지정하지 않아도 installer상에서 설정이 가능하지만, 그렇데 된다면 kickstart를 network으로 받아오지 못하는 관계로 command line option으로 IP를 지정해 줘야 합니다.
+
+```
+inst.vnc ip=192.168.0.227::192.168.0.1:255.255.255.0:annyung3.oops.org::none nameserver=8.8.8.8 inst.ks=http://mirror.oops.org/pub/AnNyung/3/inst/AnNyung.ks
+```
 
 command option으로 위와 같이 옵션을 추가해 주도록 합니다. ip는 여러분의 상황에 맞게 수정을 해야 합니다. 각 옵션에 대한 설명은 다음과 같습니다.
 
+***참고로, CentOS 7은 text mode 설치가 매우 불편하므로, graphic mode로 설치를 하는 것이 좋은데, XenCenter의 console은 이를 지원하지 못합니다. 그러므로 옵션에 inst.vnc 를 추가하여 VNC를 이용하여 설치를 해야 합니다. (하단 참조)***
+
+* **utf8**<br>
+  따로 지정하지 않아도 상관이 없습니다. deprecated 똔느 remove 된 옵션으로 이미지상에 나와 있어 설명을 추가 합니다. 그냥 지정하지 않으면 됩니다.
+
+* **noipv6**<br>
+  설치 프로그램에서 IPv6 지원을 비활성화하는데 사용됩니다. IPv6는 커널에 탑재되어 드라이버는 블랙리스트에 실리지 않습니다. 하지만 ipv6.disable dracut 옵션을 사용하여 IPv6를 비활성화할 수 있습니다.
+  안녕리눅스 설치시에는 installer post script에서 기본으로 ipv6를 off 시키고 있으니, 여기서의 지정 유무는 영향을 주지 않습니다. 역시 지정하지 않아도 무방합니다.
 
 * **ip**
  * 설치하는 네트워크에 DHCP서버가 있을 경우<br>
@@ -115,12 +148,12 @@ command option으로 위와 같이 옵션을 추가해 주도록 합니다. ip�
 * **inst.vnc**<br>
   CentOS/RHEL 7의 installer의 경우 text mode 설치가 굉장히 번거롭기 때문에 graphical mode로 설치를 하는 것이 편합니다. 하지만, Xen Center의 console로는 graphical 설치가 불가능 하기 때문에 VNC를 이용하여 GUI 설치를 시도하는 방법을 제시 합니다. 아무런 옵션 없이 "**inst.vnc**"만 추가를 해 주면 됩니다. 만약, kickstart 에서 disk partition과 root 암호, account 생성까지 처리를 하신다면, kickstart를 text mode로 지정하여 VNC 없이 진행하는 것도 가능 합니다. 이 방법은 DIY 하시기 바랍니다.
 
+
 부팅 옵션에 대한 자세한 설명은 [RHEL 7 설치 가이드](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [부트옵션](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-anaconda-boot-options.html) 섹션을 참고 하십시오.
+ 
+부팅 옵션을 입력한 후, 엔터를 누르면 설치 화면으로 넘어가게 됩니다.
 
 
-## 5. CPU & Memory
-
-CentOS 7.1 부터는 install image의 크기가 커져서 설치시에 Memory가 최소한 2G가 필요 합니다. **_CentOS 6 (64-bit)_** template은 기본으로 Memory를 1G를 잡기 때문에, 최소한 2G 이상으로 지정해 주어야 합니다.
 
 
 ## 6. VNC 연결 및 설치
@@ -131,11 +164,11 @@ VNC를 이용한 설치 방법에 대한 자세한 설명은 [RHEL 7 설치 가�
 
 > 다운로드: http://www.tightvnc.com/download.php
 
-Xen Center의 NewVM을 생성한 후에, guest os를 실행합니다.
+***Install option*** 을 설정한 후에 설치를 시작합니다.
 
 ![](/assets/xen-005.jpg)
 
-geuset OS를 시작하고 Xen Center의 console에서 보면 위의 이미지와 같이 VNC 서버가 뜨게 됩니다.
+Xen Center의 guset os console에서 보면 위의 이미지와 같이 VNC 서버가 뜨게 됩니다.
 
 ![](/assets/xen-004.jpg)
 
