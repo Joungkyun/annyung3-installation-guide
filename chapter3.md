@@ -59,7 +59,7 @@ Centos 7.3 부터는 CentOS 6 templaste로 설치가 되지 않습니다. 그러
 Xen Center의 트리에 보여지는 이름을 설정 합니다. 보통은 서버의 hostname을 지정해 주시면 됩니다. 역시 여기의 설정은 OS 설치에는 영향을 주지 않으며, 단순히 Xen Center에서 현재 만드는 VM을 인식하기 위한 정보로만 사용이 됩니다.
 
 
-## 5. Insatll Media 설정
+## 5. Install Media 설정
 
 ![Insatll Media 설정 이미지](/assets/xen72-001.jpg)
 
