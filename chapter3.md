@@ -3,10 +3,14 @@
 Not Yet!
 **Copyright 2016 &copy; JoungKyun.Kim all rights reserved.**
 
-2016.02.29<br>
+2017.07.26<br>
 김정균 &lt; http://oops.org &gt;
 
 이 문서는 Xen Server에 안녕 리눅스 3을 설치하는 방법을 기술 합니다.
+
+---
+**더이상 CentOS 6 template로 CentOS 7이나 AnNyung 3이 설치되지 않습니다. 현재 이 문제를 해결한 문서를 작성 중입니다. 이 메시지가 없어지면 문서 작업이 완료된 것입니다. (2017.07.26)**
+---
 
 이 문서는 Windows용 Citrix XenCenter를 이용하여 설치하는 방법을 보여주며, Installer가 실행된 다음 부터는 <a href="chapter2.html">"**2. CentOS/RHEL 7 Network Insatll ISO를 이용한 설치**"</a> 와 동일하게 진행이 됩니다.
 
@@ -14,6 +18,28 @@ Not Yet!
 
 또는, Xen Center를 이용하여 CentOS 7을 설치가 가능하신 분은 Installer에서 Core package만 설치 하신 후에, <a href="chapter1.html">"**1. CentOS/RHEL 7 Miniamll ISO를 이용한 설치**"</a> 문서의 "**9. 안녕 리눅스 전환**" 항목을 참고 하여 진행할 수 있습니다.
 
+## 1. 설치 Media 환경 준비
+
+CentOS 7 template에서는 더이상 "***install from URL***" 방법이 지원되지 않고, ***CD-ROM 설치*** 또는 ***PXE 설치*** 만 지원이 됩니다.
+
+***PXE*** 설치 환경이 가능하시면 ***PXE 설치*** 를 이용하시면 됩니다.
+
+***PXE 설치*** 환경이 없다면, 다음의 작업을 이용하여 가상 CD-ROM 설치가 가능 합니다.
+
+다음 작업은 XenServer Host 에서 실행 합니다. (Guest VM에서 하지 않습니다.)
+
+```bash
+[root@vmhost ~]$ mkdir -p /home/isos
+[root@vmhost ~]$ cd /home/isos
+[root@vmhost isos]$ wget http://ftp.daumkakao.com/centos/7/isos/x86_64/CentOS-7-x86_64-NetInstall-1611.iso
+[root@vmhost isos]$ xe sr-create name-label=isos \
+                       type=iso device-config:location=/home/isos \
+                       device-config-legacy_mode=true content-type=iso
+```
+
+명령을 실행하고 나면 다음과 같이 XenCenter에서 ***isos*** 가 CD-ROM type으로 등록이 됩니다.
+
+![가상 CDROM 등록](/assets/xen-isos-regist.jpg)
 
 ## 1. New VM 생성
 
@@ -22,7 +48,7 @@ geust OS를 생성하기 위하여 Xen Center를 실행하고, 상단 툴바에�
 
 ## 2. Select a VM template
 
-![템플릿 선택 이미지](xen-001.jpg)
+![템플릿 선택 이미지](/assets/xen-001.jpg)
 
 여기서는 Xen server가 remote에 있다는 가정하에 진행을 합니다.
 
@@ -35,14 +61,14 @@ PXE 설치가 가능한 경우에는 **_CentOS 7_** template으로 설치가 가
 
 ## 3. Name 설정
 
-![Name 설정 이미지](xen-002.jpg)
+![Name 설정 이미지](/assets/xen-002.jpg)
 
 Xen Center의 트리에 보여지는 이름을 설정 합니다. 보통은 서버의 hostname을 지정해 주시면 됩니다. 역시 여기의 설정은 OS 설치에는 영향을 주지 않으며, 단순히 Xen Center에서 현재 만드는 VM을 인식하기 위한 정보로만 사용이 됩니다.
 
 
 ## 4. Insatll Media 설정
 
-![Insatll Media 설정 이미지](xen-003.jpg)
+![Insatll Media 설정 이미지](/assets/xen-003.jpg)
 
 installation method는 "**Insatll From URL:**"을 선택 하도록 하고 CentOS 7의 boot image가 있는 URL을 지정해 줍니다. 한국의 mirror는 다음 중에 하나를 사용하실 수 있습니다.
 
@@ -107,15 +133,15 @@ VNC를 이용한 설치 방법에 대한 자세한 설명은 [RHEL 7 설치 가�
 
 Xen Center의 NewVM을 생성한 후에, guest os를 실행합니다.
 
-![](xen-005.jpg)
+![](/assets/xen-005.jpg)
 
 geuset OS를 시작하고 Xen Center의 console에서 보면 위의 이미지와 같이 VNC 서버가 뜨게 됩니다.
 
-![](xen-004.jpg)
+![](/assets/xen-004.jpg)
 
 다음, 설치한 TightVNC viewer를 실행하고, Xen Center console에 뜬 VNC 접속 주소를 Remote Host에 입력해 줍니다. 현재 예제에서는 Xen Center console에는 "**open-new.#######:1**" 이라고 되어 있고, VNC viewer의 Remote Host에는 "**192.168.0.227:1**" 이라고 다르게 되어 있는데, 이는 예제 파일을 만들다 보니 다르게 되어 있을 뿐, 실제로는 Xen Center Console에 뜬 "**주소:1**" 즉 domain.com:1 또는 1.1.1.1:1 처럼 넣어 주시면 됩니다.
 
-![](xen-006.jpg)
+![](/assets/xen-006.jpg)
 
 VNC 접속이 이루어지고, GUI installer가 VNC viewer에 뜬 모습니다.
 
@@ -123,32 +149,32 @@ VNC 접속이 이루어지고, GUI installer가 VNC viewer에 뜬 모습니다.
 
 여기서 부터는 Miniall ISO또는 Network Install ISO를 이용한 방법과 동일하게 진행이 됩니다.
 
-![](xen-007.jpg)
+![](/assets/xen-007.jpg)
 
 disk partitioning을 완료하고 우측 하단의 푸른색 "**설치 시작(D)**" 버튼을 클릭하여 설치를 시작합니다.
 
 
-![](xen-008.jpg)
+![](/assets/xen-008.jpg)
 
 설치가 되는 동안, ROOT 암호와 user account를 생성 합니다.
 
 
-![ROOT 암호 변경](xen-009.jpg)
+![ROOT 암호 변경](/assets/xen-009.jpg)
 
 ROOT 암호 변경 페이지 입니다.
 
-![일반 계정 생성](xen-010.jpg)
+![일반 계정 생성](/assets/xen-010.jpg)
 
 일반 사용자 계정 추가 페이지 입니다.
 
 <strong style="color:red;">참고!!</strong>  
 주의할 것은, 생성한 일반 유저는 최초 접속시에 무조건 암호를 변경 되도록 되어 있습니다. 이는 ISMS 보안 심사를 위한 설정에 의하여 적용된 사항이므로, 다른 배포본과의 차이 입니다.
 
-![설치 완료 이미지](xen-011.jpg)
+![설치 완료 이미지](/assets/xen-011.jpg)
 
 AnNyung.ks 를 이용하여 설치를 하면, 설치 완료 후 자동 부팅이 되므로, 위의 이미지와 같이 설치 완료시에 VNC 접속이 끊어지게 되오니, 당황할 필요 없이 VNC viewer를 종료 시키면 됩니다.
 
-![로그인 화면](xen-012.jpg)
+![로그인 화면](/assets/xen-012.jpg)
 
 VNC 연결 종료 후, Xen Center의 console로 돌아가 보면 위의 이미지처럼 로그인 화면이 띄게 됩니다. 설치시에 지정하였던 ROOT 암호를 이용하여 로그인을 하면 됩니다.
 
