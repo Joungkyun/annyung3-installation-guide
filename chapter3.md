@@ -7,6 +7,8 @@
 
 이 문서는 Xen Server에 안녕 리눅스 3을 설치하는 방법을 기술 합니다.
 
+안녕 리눅스 3을 설치 하기 위해서는 ***XenServer 6.5*** 이상을 사용하여야 합니다.
+
 이 문서는 Windows용 Citrix XenCenter를 이용하여 설치하는 방법을 보여주며, Installer가 실행된 다음 부터는 <a href="chapter2.html">"**2. CentOS/RHEL 7 Network Insatll ISO를 이용한 설치**"</a> 와 동일하게 진행이 됩니다.
 
 이 문서에서는 Xen Center를 이용하여 OS를 설치하는 과정을 모두 설명하지는 않습니다.
@@ -36,32 +38,28 @@ CentOS 7 template에서는 더이상 "***install from URL***" 방법이 지원�
 
 ![가상 CDROM 등록](/assets/xen-isos-regist.jpg)
 
-## 1. New VM 생성
+## 2. New VM 생성
 
 geust OS를 생성하기 위하여 Xen Center를 실행하고, 상단 툴바에서 "**_New VM_**" 을 선택 합니다.
 
 
-## 2. Select a VM template
+## 3. Select a VM template
 
 ![템플릿 선택 이미지](/assets/xen-001.jpg)
 
 여기서는 Xen server가 remote에 있다는 가정하에 진행을 합니다.
 
-CentOS 7 template을 선택할 경우, Xen server의 local cdrom 또는 Bootp만 부팅에 사용을 할 수 있기 때문에 많은 귀찮음이 있습니다. 그래서 여기서는 CentOS 6 template을 사용하여 설치를 진행합니다.
-
-그러므로, template은 **_CentOS 6 (64-bit)_** 을 선택하도록 합니다.
-
-PXE 설치가 가능한 경우에는 **_CentOS 7_** template으로 설치가 가능하며, 이 경우 기능이 향상된 **_XenCenter_** console을 사용할 수 있습니다.
+Centos 7.3 부터는 CentOS 6 templaste로 설치가 되지 않습니다. 그러므로 ***CentOS 7*** template를 선택 합니다.
 
 
-## 3. Name 설정
+## 4. Name 설정
 
 ![Name 설정 이미지](/assets/xen-002.jpg)
 
 Xen Center의 트리에 보여지는 이름을 설정 합니다. 보통은 서버의 hostname을 지정해 주시면 됩니다. 역시 여기의 설정은 OS 설치에는 영향을 주지 않으며, 단순히 Xen Center에서 현재 만드는 VM을 인식하기 위한 정보로만 사용이 됩니다.
 
 
-## 4. Insatll Media 설정
+## 5. Insatll Media 설정
 
 ![Insatll Media 설정 이미지](/assets/xen-003.jpg)
 ![Insatll Media 설정 이미지](/assets/xen72-001.jpg)
@@ -71,7 +69,7 @@ Xen Center의 트리에 보여지는 이름을 설정 합니다. 보통은 서�
 CD-ROM 이 있다면 CD-ROM을 선택 하시고, 가상 CD-ROM 작업을 하였다면, isos 아래의 ISO 파일을 선택 하도록 합니다.
 
 
-## 5. CPU & Memory
+## 6. CPU & Memory
 
 ![CPU 및 메모리 설정](/assets/xen72-002.jpg)
 
@@ -80,7 +78,7 @@ CD-ROM 이 있다면 CD-ROM을 선택 하시고, 가상 CD-ROM 작업을 하였�
 메모리의 경우, CentOS 7.1 부터는 install image의 크기가 커져서 설치 시에 Memory가 최소한 ***2G*** 가 필요 합니다. 그러므로, 2G 이하로 잡고 싶다면 설치를 마친 후에 Guest 설정에서 메모리를 줄여 주시면 됩니다.
 
 
-## 6. 설치 시작
+## 7. 설치 시작
 
 ![](VirtualBox_AnNyung3_22_01_2016_19_02_05.png)
 
@@ -151,7 +149,7 @@ command option으로 위와 같이 옵션을 추가해 주도록 합니다. ip�
 
 
 
-## 6. VNC 연결 및 설치
+## 8. VNC 연결 및 설치
 
 VNC를 이용한 설치 방법에 대한 자세한 설명은 [RHEL 7 설치 가이드](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/)의 [22장. VNC를 사용하여 설치하기](https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-vnc-installations.html) 섹션을 참고 하십시오.
  
@@ -173,7 +171,7 @@ Xen Center의 guset os console에서 보면 위의 이미지와 같이 VNC 서�
 
 VNC 접속이 이루어지고, GUI installer가 VNC viewer에 뜬 모습니다.
 
-## 7. 설치 시작
+## 9. 설치 시작
 
 여기서 부터는 Miniall ISO또는 Network Install ISO를 이용한 방법과 동일하게 진행이 됩니다.
 
@@ -207,7 +205,7 @@ AnNyung.ks 를 이용하여 설치를 하면, 설치 완료 후 자동 부팅이
 VNC 연결 종료 후, Xen Center의 console로 돌아가 보면 위의 이미지처럼 로그인 화면이 띄게 됩니다. 설치시에 지정하였던 ROOT 암호를 이용하여 로그인을 하면 됩니다.
 
 
-## 8. 안녕 리눅스 운영상 참고 사항
+## 10. 안녕 리눅스 운영상 참고 사항
 
 안녕 리눅스 3은 ISMS 인증 심사 관련 설정이 deploy 되어 있기 때문에 이 설정으로 인한 운영상의 문제가 발생할 수 있습니다. 그러니 다음의 문서를 꼭 참고하여 운영상의 이슈에 대하여 대비 하시기 바랍니다.
 
