@@ -50,7 +50,6 @@ geust OS를 생성하기 위하여 Xen Center를 실행하고, 상단 툴바에�
 
 ![템플릿 선택 이미지](/assets/xen-001.jpg)
 
-
 여기서는 Xen server가 remote에 있다는 가정하에 진행을 합니다.
 
 CentOS 7 template을 선택할 경우, Xen server의 local cdrom 또는 Bootp만 부팅에 사용을 할 수 있기 때문에 많은 귀찮음이 있습니다. 그래서 여기서는 CentOS 6 template을 사용하여 설치를 진행합니다.
