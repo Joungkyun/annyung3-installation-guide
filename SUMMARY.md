@@ -1,4 +1,4 @@
-# Summary
+# Table of contents
 
 * [Introduction](README.md)
 * [CentOS/RHEL 7 Minimal ISO를 이용한 설치](chapter1.md)
