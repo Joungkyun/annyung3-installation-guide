@@ -29,7 +29,7 @@
 이 문서는 다음의 환경에 대한 설치 문서를 제공 합니다.
 
 1. [CentOS 7 or RHEL 7 Minimal ISO를 이용한 설치](https://app.gitbook.com/@joungkyun/s/annyung3-installation-guide/chapter1)
-2. [CentOS 7 or RHEL 7 Network Install ISO를 이용한 설치](https://github.com/joungkyun/annyung3-installation-guide/tree/7cac1d561ca35a2ba3af9c40909b1e11405f0c93/chapter2.html)
+2. [CentOS 7 or RHEL 7 Network Install ISO를 이용한 설치](https://joungkyun.gitbook.io/annyung3-installation-guide/chapter2)
 3. [Xen Server의 guest os로 설치](https://app.gitbook.com/@joungkyun/s/annyung3-installation-guide/chapter3)
 
 기본적으로는, "2. CentOS 7 또는 RHEL 7의 Network Install ISO를 이용한 설치" 방법을 권장 합니다.
